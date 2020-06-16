@@ -13,6 +13,8 @@ const Administracion = () => (
     <Link to='/Administracion/Turno'>Turnos</Link>
 
     <Link to='/Administracion/Medico'>Medico</Link>
+    
+    <Link to='/Administracion/Perfil'>Perfil</Link>
 
     <Link to='/Fin'>Desconectarse</Link>
   </div>
