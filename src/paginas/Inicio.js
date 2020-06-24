@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import ReactDOM from 'react-dom'
 import Logo from '../img/logo.jpg'
 import '../css/pageInicio.css'
+import Registro from '../componentes/Registro'
 
 const Titulo = () => (
   <div className="container contenedor-titulo" >
@@ -16,18 +17,29 @@ const Imagen = () => (
   </div>
 )
 
-const Botonera = () => (
-  <div className="container contenedor-Botonera">
-    <Link to='/Inicio/Registro' className="btn btn-outline-light btn-lg">Ingresar</Link>
-  </div>
-)
+class Botonera extends React.Component {
 
-const Inicio = () => (
-  <div className="container-fluid">
-    <Titulo/>
-    <Imagen/>
-    <Botonera/>
-  </div>
-)
+  registrarse () {
+    ReactDOM.render(<Registro/>, document.getElementById('inicioSeccionActiva'))
+  }
+
+render () {
+  return(
+    <div className="container contenedor-Botonera">
+      <button className="btn btn-outline-light" onClick={ this.registrarse }>Ingresar</button>
+    </div>
+  )}
+}
+
+class Inicio extends React.Component {
+  render(){
+    return (
+      <div className="container-fluid" id="inicioSeccionActiva">
+        <Titulo/>
+        <Imagen/>
+        <Botonera/>
+        </div>
+      )}
+}
 
 export default Inicio
