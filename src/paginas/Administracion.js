@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import '../css/paginaAdministracion.css'
 import Perfil from '../componentes/perfil/Perfil'
 import Usuario from '../componentes/usuario/Usuario'
-
+import Medico from '../componentes/medico/Medico'
 
 const Titulo = () => (
   <div className="container contenedor-titulo" >
@@ -19,6 +20,10 @@ class Botonera extends React.Component {
 
   administrarUsuarios () {
     ReactDOM.render(<Usuario/>, document.getElementById('administracioSeccionActiva'))
+  }
+
+  administrarMedicos () {
+    ReactDOM.render(<Medico/>, document.getElementById('administracioSeccionActiva'))
   }
 
 render(){
@@ -37,7 +42,7 @@ return(
 
           </li>
           <li className="nav-item">
-
+            <button className="btn btn-outline-light" onClick={ this.administrarMedicos } >Administrar medicos</button>
           </li>
           <li className="nav-item">
             <button className="btn btn-outline-light" onClick={ this.administrarPerfiles } >Administrar perfiles</button>
