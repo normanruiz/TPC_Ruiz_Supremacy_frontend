@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import '../css/paginaAdministracion.css'
 import Perfil from '../componentes/perfil/Perfil'
-import Usuario from '../componentes/Usuario'
+import Usuario from '../componentes/usuario/Usuario'
 
 
 const Titulo = () => (
