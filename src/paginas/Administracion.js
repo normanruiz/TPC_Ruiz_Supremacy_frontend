@@ -5,6 +5,10 @@ import '../css/paginaAdministracion.css'
 import Perfil from '../componentes/perfil/Perfil'
 import Usuario from '../componentes/usuario/Usuario'
 import Medico from '../componentes/medico/Medico'
+import Estado from '../componentes/estado/Estado'
+import Nota from '../componentes/nota/Nota'
+import Paciente from '../componentes/paciente/Paciente'
+
 
 const Titulo = () => (
   <div className="container contenedor-titulo" >
@@ -15,15 +19,27 @@ const Titulo = () => (
 class Botonera extends React.Component {
 
   administrarPerfiles () {
-    ReactDOM.render(<Perfil/>, document.getElementById('administracioSeccionActiva'))
+    ReactDOM.render(<Perfil/>, document.getElementById('administracionSeccionActiva'))
   }
 
   administrarUsuarios () {
-    ReactDOM.render(<Usuario/>, document.getElementById('administracioSeccionActiva'))
+    ReactDOM.render(<Usuario/>, document.getElementById('administracionSeccionActiva'))
   }
 
   administrarMedicos () {
-    ReactDOM.render(<Medico/>, document.getElementById('administracioSeccionActiva'))
+    ReactDOM.render(<Medico/>, document.getElementById('administracionSeccionActiva'))
+  }
+
+  administrarEstados () {
+    ReactDOM.render(<Estado/>, document.getElementById('administracionSeccionActiva'))
+  }
+
+  administrarNotas () {
+    ReactDOM.render(<Nota/>, document.getElementById('administracionSeccionActiva'))
+  }
+
+  administrarPacientes () {
+    ReactDOM.render(<Paciente/>, document.getElementById('administracionSeccionActiva'))
   }
 
 render(){
@@ -33,13 +49,13 @@ return(
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-
+            <button className="btn btn-outline-light" onClick={ this.administrarPacientes} >Administrar pacientes</button>
           </li>
           <li className="nav-item">
-
+            <button className="btn btn-outline-light" onClick={ this.administrarNotas } >Administrar notas</button>
           </li>
           <li className="nav-item">
-
+            <button className="btn btn-outline-light" onClick={ this.administrarEstados } >Administrar estados</button>
           </li>
           <li className="nav-item">
             <button className="btn btn-outline-light" onClick={ this.administrarMedicos } >Administrar medicos</button>
@@ -61,7 +77,7 @@ return(
 }
 
 const SeccionActiva = () => (
-  <div className="container-fluid contenedor-SeccionActiva" id="administracioSeccionActiva" >
+  <div className="container-fluid contenedor-SeccionActiva" id="administracionSeccionActiva" >
 
   </div>
 )
